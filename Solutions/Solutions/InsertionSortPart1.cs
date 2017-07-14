@@ -13,38 +13,28 @@ class InsertionSortPart1
 
         var insert = ar[ar.Length - 1];
 
-      
-        bool sorted = false;
-        do
+        for (int i = ar.Length - 2; i >= 0; i--)
         {
-            for (int i = ar.Length - 2; i >= 0; i--)
+            if (ar[i] > insert) // only shift!
             {
-                if (ar[i] > insert) // only shift!
-                {
-                    ar[i + 1] = ar[i]; // shift right
-                    PrintArray(ar);
-                }
-                else if (ar[i] < insert) // shift and insert
-                {
-                    ar[i + 1] = ar[i]; // shift right
-                    ar[i] = insert; // insert
-                    sorted = true;
-                    PrintArray(ar);
-                    break;
-                }
-
-                if (i == 0 && !sorted) // only insert
-                {
-                    ar[i] = insert;
-                    PrintArray(ar);
-                    sorted = true;
-                    break;
-                }
+                ar[i + 1] = ar[i]; // shift right
+                PrintArray(ar);
+            }
+            else if (ar[i] < insert) // shift and insert
+            {
+                ar[i + 1] = ar[i]; // shift right
+                ar[i] = insert; // insert
+                PrintArray(ar);
+                break;
             }
 
-
-        } while (!sorted);
-
+            if (i == 0) // only insert
+            {
+                ar[i] = insert;
+                PrintArray(ar);
+                break;
+            }
+        }
 
         return ar;
 
@@ -69,5 +59,7 @@ class InsertionSortPart1
         {
             _ar[_ar_i] = Convert.ToInt32(split_elements[_ar_i]);
         }
+
+        insertionSort(_ar);
     }
 }
