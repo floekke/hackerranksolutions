@@ -20,19 +20,22 @@ class InsertionSortPart1
                 ar[i + 1] = ar[i]; // shift right
                 PrintArray(ar);
             }
-            else if (ar[i] < insert) // shift and insert
+            else if (ar[i] < insert) // insert to right
             {
-                ar[i + 1] = ar[i]; // shift right
-                ar[i] = insert; // insert
+                ar[i + 1] = insert; 
                 PrintArray(ar);
                 break;
             }
 
-            if (i == 0) // only insert
+            if (i == 0 && ar[i] > insert) // only insert
             {
                 ar[i] = insert;
                 PrintArray(ar);
                 break;
+            }
+            else if(i == 0 && ar[i] < insert)
+            {
+
             }
         }
 
