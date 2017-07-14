@@ -35,20 +35,20 @@ class Bigsort
             .ToArray();
     }
 
-    static void Main(String[] args)
-    {
+    //static void Main(String[] args)
+    //{
 
-        int n = Convert.ToInt32(Console.ReadLine());
-        string[] unsorted = new string[n];
-        for (int unsorted_i = 0; unsorted_i < n; unsorted_i++)
-        {
-            unsorted[unsorted_i] = Console.ReadLine();
-        }
+    //    int n = Convert.ToInt32(Console.ReadLine());
+    //    string[] unsorted = new string[n];
+    //    for (int unsorted_i = 0; unsorted_i < n; unsorted_i++)
+    //    {
+    //        unsorted[unsorted_i] = Console.ReadLine();
+    //    }
 
-        foreach (var s in Sort(n,unsorted))
-        {
-            Console.WriteLine(s);
-        } 
-    }
+    //    foreach (var s in Sort(n,unsorted))
+    //    {
+    //        Console.WriteLine(s);
+    //    } 
+    //}
 }
 

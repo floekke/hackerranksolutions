@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Solutions
 {
-    class BigSort
+    class BigSortTests
     {
     }
 }
