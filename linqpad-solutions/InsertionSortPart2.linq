@@ -30,7 +30,6 @@ class Solution
 			if (ar[i] > insert) // only shift!
 			{
 				ar[i + 1] = ar[i]; // shift right
-				PrintArray(ar);
 			}
 			else if (ar[i] < insert) // insert to right
 			{
