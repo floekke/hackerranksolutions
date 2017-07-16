@@ -25,6 +25,8 @@ class Solution
 	static List<int> Merge(List<int> left, List<int> right)
 	{
 		left.AddRange(right);
+		Print(left);
+		
 		return left;
 	}
 
@@ -50,10 +52,15 @@ class Solution
 		return Tuple.Create(left, pivot, right);
 	}
 
-	static void Main()
+	static void Print(List<int> ar)
 	{
-		QuickSort(new List<int> { 4, 5, 6, 2, 1 }).Dump();
+		Console.WriteLine(String.Join(" ", ar));
 	}
+
+//	static void Main()
+//	{
+//		QuickSort(new List<int> { 4, 5, 6, 2, 1 }).Dump();
+//	}
 
 	/* Tail starts here */
 	static void Main(String[] args)
