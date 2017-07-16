@@ -9,18 +9,17 @@ class Solution
 {
 	static List<int> QuickSort(List<int> ar)
 	{
-		if(ar.Count == 1)
+		if (ar.Count == 0 || ar.Count == 1)
 			return ar;
-		
-		var leftRight = Partition(ar);
-		var left = leftRight.Item1;
-		var right = leftRight.Item2;
-		
-		if(left.Count == 1 && right.Count == 1)
-			return left.Concat(right).ToList();
-			
-		
-		return ar;
+
+		var p = Partition(ar);
+
+		var left = QuickSort(p.Item1);
+		left.Add(p.Item2);
+
+		var right = QuickSort(p.Item3);
+
+		return Merge(left, right);
 	}
 
 	static List<int> Merge(List<int> left, List<int> right)
@@ -29,11 +28,8 @@ class Solution
 		return left;
 	}
 
-	static Tuple<List<int>, List<int>> Partition(List<int> ar)
+	static Tuple<List<int>, int, List<int>> Partition(List<int> ar)
 	{
-		if (ar.Count == 0 || ar.Count == 1)
-			return Tuple.Create(new List<int>(), ar);
-
 		var pivot = ar[0];
 
 		var left = new List<int>();
@@ -45,13 +41,13 @@ class Solution
 			{
 				right.Add(ar[i]);
 			}
-			else if (ar[i] <= pivot) // left
+			else if (ar[i] < pivot) left
 			{
 				left.Add(ar[i]);
 			}
 		}
 
-		return Tuple.Create(left, right);
+		return Tuple.Create(left, pivot, right);
 	}
 
 	static void Main()
