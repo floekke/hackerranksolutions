@@ -37,11 +37,11 @@ class Solution
 
 		for (int i = 0; i < ar.Count; i++)
 		{
-			if (ar[i] > pivot) // right
+			if (ar[i] > pivot) 
 			{
 				right.Add(ar[i]);
 			}
-			else if (ar[i] < pivot) left
+			else if (ar[i] < pivot) 
 			{
 				left.Add(ar[i]);
 			}
